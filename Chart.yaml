@@ -1,0 +1,7 @@
+apiVersion: v2
+name: argocd-app-configs
+description: App Suite Deployment
+type: application
+version: 1.0.0
+appVersion: 1.0.0
+icon: https://avatars.githubusercontent.com/u/58514521?s=200&v=4

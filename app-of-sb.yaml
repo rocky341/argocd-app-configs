@@ -1,0 +1,36 @@
+git_url: &giturl https://github.com/Purple-Sky-Pirates/argocd-app-configs.git
+
+argocd_projects:
+  - enabled: true
+    name: sb-app-suite
+    destinations:
+      - namespace: sb-ci-cd
+        server: https://kubernetes.default.svc
+      - namespace: sb-test
+        server: https://kubernetes.default.svc
+      - namespace: sb-staging
+        server: https://kubernetes.default.svc
+
+applications:
+  # Test app of app
+  # - name: test-app-of-sb
+  #   enabled: true
+  #   destination: sb-ci-cd
+  #   source: *giturl
+  #   source_path: .
+  #   source_ref: master
+  #   sync_policy_automated: true
+  #   project: sb-app-suite
+  #   helm_values: 
+  #     - sb/test/values.yaml
+  # Staging App of Apps
+  - name: staging-app-of-sb
+    enabled: true
+    destination: sb-ci-cd
+    source: *giturl
+    source_path: .
+    helm_values: 
+      - sb/staging/values.yaml
+    source_ref: master
+    sync_policy_automated: true      
+    project: sb-app-suite
