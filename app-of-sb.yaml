@@ -22,3 +22,13 @@ applications:
     source_ref: master
     sync_policy_automated: true      
     project: sb-app-suite
+  - name: test-app-of-sb
+    enabled: true
+    destination: argocd
+    source: *giturl
+    source_path: .
+    helm_values: 
+      - sb/test/values.yaml
+    source_ref: master
+    sync_policy_automated: true      
+    project: sb-app-suite
