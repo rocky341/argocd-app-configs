@@ -1,5 +1,5 @@
-helm_repository: &helm_repo 'http://sonatype-nexus-service.nexus-nexus.svc.cluster.local:8081/repository/purplesky-charts/'
-image_version: 1.3
+helm_repository: &helm_repo 'https://nexus-nexus.apps.ocp1.purplesky.cloud/repository/purplesky-charts/'
+# image_version: 1.3
 ##############
 # Argo Apps declaration
 #############
