@@ -71,4 +71,3 @@ spec:
         - /spec/template/spec/containers/1/image
 {{- end }}
 {{- end }}
-{{- end }}
