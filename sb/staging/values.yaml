@@ -1,4 +1,5 @@
 helm_repository: &helm_repo 'http://sonatype-nexus-service.nexus-nexus.svc.cluster.local:8081/repository/purplesky-charts/'
+image_version: 1.3
 ##############
 # Argo Apps declaration
 #############
@@ -9,11 +10,14 @@ applications:
     source: *helm_repo
     chart_name: sb-app
     destination: sb-staging
-    source_ref: 0.1.0 # helm chart version
+    source_ref: 0.1.1 # helm chart version
     values:
       fullnameOverride: sb-app
+      image_repository: quay.io/swinches
+      image_name: spring-boot-helm-openshift-argocd
+      image_version: 1.3 # new image version      
       image:
-        repository: quay.io/spring-boot-helm-openshift-argocd
+        repository: quay.io/swinches/spring-boot-helm-openshift-argocd
         tag: 1.3 # new image version
       config:
         favourite:
