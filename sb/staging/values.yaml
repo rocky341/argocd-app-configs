@@ -5,14 +5,14 @@ helm_repository: &helm_repo 'https://nexus-nexus.apps.ocp1.purplesky.cloud/repos
 #############
 applications:
   sb-app:
-    name: sb-app
+    name: sb-app-staging
     enabled: true
     source: *helm_repo
     chart_name: sb-app
     destination: sb-staging
     source_ref: 0.1.1 # helm chart version
     values:
-      fullnameOverride: sb-app
+      fullnameOverride: sb-app-staging
       image_repository: quay.io/swinches
       image_name: spring-boot-helm-openshift-argocd
       image_version: 1.3 # new image version      
