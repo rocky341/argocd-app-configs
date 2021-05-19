@@ -4,7 +4,7 @@ argocd_projects:
   - enabled: true
     name: sb-app-suite
     destinations:
-      - namespace: argocd
+      - namespace: stu-argocd
         server: https://kubernetes.default.svc
       - namespace: sb-test
         server: https://kubernetes.default.svc
@@ -14,7 +14,7 @@ argocd_projects:
 applications:
   - name: staging-app-of-sb
     enabled: true
-    destination: argocd
+    destination: stu-argocd
     source: *giturl
     source_path: .
     helm_values: 
@@ -24,7 +24,7 @@ applications:
     project: sb-app-suite
   - name: test-app-of-sb
     enabled: true
-    destination: argocd
+    destination: stu-argocd
     source: *giturl
     source_path: .
     helm_values: 
