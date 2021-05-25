@@ -52,7 +52,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      validate: true
   ignoreDifferences:
     - group: apps.openshift.io
       kind: DeploymentConfig
