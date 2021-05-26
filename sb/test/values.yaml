@@ -18,7 +18,7 @@ applications:
       image_version: 1.3 # new image version      
       image:
         repository: quay.io/swinches/spring-boot-helm-openshift-argocd
-        tag: 1.3 # new image version
+        tag: 1.2 # new image version
       config:
         favourite:
           cheese: Test Stinking Bishop
