@@ -9,7 +9,7 @@ applications:
     enabled: true
     source: *helm_repo
     chart_name: sb-app
-    destination: sb-test
+    destination: rocky-test
     source_ref: 0.1.1 # helm chart version
     values:
       fullnameOverride: sb-app-test
