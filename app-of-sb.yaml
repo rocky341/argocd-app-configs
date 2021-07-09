@@ -4,17 +4,17 @@ argocd_projects:
   - enabled: true
     name: sb-app-suite
     destinations:
-      - namespace: stu-argocd
+      - namespace: rocky-argocd
         server: https://kubernetes.default.svc
-      - namespace: sb-test
+      - namespace: rocky-test
         server: https://kubernetes.default.svc
-      - namespace: sb-staging
+      - namespace: rocky-staging
         server: https://kubernetes.default.svc
 
 applications:
   - name: staging-app-of-sb
     enabled: true
-    destination: stu-argocd
+    destination: rocky-argocd
     source: *giturl
     source_path: .
     helm_values: 
@@ -24,7 +24,7 @@ applications:
     project: sb-app-suite
   - name: test-app-of-sb
     enabled: true
-    destination: stu-argocd
+    destination: rocky-argocd
     source: *giturl
     source_path: .
     helm_values: 
